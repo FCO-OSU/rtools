@@ -11,7 +11,7 @@
 
 latlon_to_merc = function(lon, lat)
 {
-  sf::sf_project(from = sf::st_crs(4326)$wkt, to = sf::st_crs(3857)$wkt,
+  sf::sf_project(from = sf::st_crs(4326), to = sf::st_crs(3857),
                  pts = cbind(lon, lat)) |> as.data.frame() |> `names<-`(c('x','y'))
 }
 
@@ -29,7 +29,7 @@ latlon_to_merc = function(lon, lat)
 
 merc_to_latlon = function(x, y)
 {
-  sf::sf_project(from = sf::st_crs(3857)$wkt, to = sf::st_crs(4326)$wkt,
+  sf::sf_project(from = sf::st_crs(3857), to = sf::st_crs(4326),
                  pts = cbind(x, y)) |> as.data.frame() |> `names<-`(c('lon','lat'))
 }
 
