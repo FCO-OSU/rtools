@@ -23,4 +23,3 @@ report_dependencies = function(path = './', print = FALSE, simple = TRUE){
   if(simple) return(dependencies)
   return(list(all_dependencies = dependencies, pre_loaded = loaded, invoked_in_line = invoked))
 }
-
