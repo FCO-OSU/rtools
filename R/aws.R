@@ -12,7 +12,7 @@
 
 aws_get_param = function(parameter, region = 'eu-west-2', profile = ''){
   if(profile != '') profile = paste(' --profile', profile)
-  cli_call = glue::glue('aws{profile} ssm get-parameter --name {parameter} --region {region}')
+  cli_call = glue::glue('aws{profile} ssm get-parameter --with-decryption --name {parameter} --region {region}')
   j = system(cli_call, intern = TRUE)
   if(!jsonlite::validate(j)){
     warning('failed with cli call:\n  ', cli_call)
