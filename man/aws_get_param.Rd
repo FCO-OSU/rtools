@@ -4,18 +4,20 @@
 \alias{aws_get_param}
 \title{AWS tools}
 \usage{
-aws_get_param(secret_id, region = "eu-west-2")
+aws_get_param(parameter, region = "eu-west-2", profile = "")
 }
 \arguments{
-\item{secret_id}{Character string AWS parameter name}
+\item{parameter}{Character string AWS parameter name}
 
 \item{region}{Character string AWS region}
+
+\item{profile}{Character string name of AWS CLI profile if required}
 }
 \value{
 A character string
 }
 \description{
-Retrieve AWS secret
+Retrieve an AWS parameter via SSM
 }
 \examples{
 aws_get_param("param-name")
